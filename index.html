@@ -252,9 +252,33 @@ const niveau=document.getElementById("niveau");const exp=document.getElementById
 function updateLevel(){let score=(niveau.value*30)+(exp.value.length/5);if(score<40) levelText.textContent="Profil: Faible"; else if(score<70) levelText.textContent="Profil: Moyen"; else levelText.textContent="Profil: Élevé";}
 niveau.onchange=updateLevel; exp.oninput=updateLevel;
 
+<script>
 // BLOQUER CLIC DROIT / CTRL+U / CTRL+S
 document.addEventListener('contextmenu', e=>e.preventDefault());
-document.addEventListener('keydown', e=>{if(e.ctrlKey&&(e.key==='u'||e.key==='s'||e.key==='i')) e.preventDefault();});
+document.addEventListener('keydown', e=>{
+  if(e.ctrlKey && (e.key==='u'||e.key==='s'||e.key==='i')) e.preventDefault();
+});
+
+// MUSIQUE (fonctionne sur mobile après clic)
+const music = document.getElementById("music");
+
+document.addEventListener("click", () => {
+    music.play().catch(()=>{});
+}, {once:true});
+
+// FORM + REDIRECTION
+const form = document.getElementById("myForm");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    fetch(form.action,{
+        method:"POST",
+        body:new FormData(form)
+    }).then(()=>{
+        window.location.href="https://chat.whatsapp.com/LRkMdspT8oLDT5MBNESu7a";
+    });
+});
 </script>
 
 </body>
