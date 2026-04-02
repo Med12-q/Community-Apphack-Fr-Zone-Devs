@@ -3,206 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>APPHACK-Fr✦ZONE | Accès Restreint</title>
+<title>apphack-fr✦zone</title>
+
 <style>
 :root{
-    --bg:#000000; 
-    --card:#111113;
-    --accent:#ff2a2a; 
+    --bg:#000;
+    --accent:#ff0000;
     --text:#eaeaea;
 }
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Segoe UI,sans-serif;}
-body {
-    background: var(--bg);
-    color: var(--text);
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif;}
+
+body{
+    background:var(--bg);
+    color:var(--text);
     display:flex;
     flex-direction:column;
     align-items:center;
-    padding:20px;
-    overflow-x: hidden;
+    padding:15px;
 }
 
-/* VIDEO RECTANGULAIRE EN HAUT */
+/* VIDEO */
 .video-banner{
-    width:90%;
+    width:95%;
     max-width:900px;
-    height:auto;
     aspect-ratio:16/9;
-    margin-bottom:30px;
-    border-radius:16px;
-    border:4px solid var(--accent);
-    box-shadow:0 0 20px var(--accent),0 0 30px rgba(255,42,42,0.4) inset;
-    overflow:hidden;
-    position:relative;
-}
-.video-banner video{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+    border:3px solid red;
     border-radius:12px;
-    filter:brightness(1.2);
+    overflow:hidden;
+    margin-bottom:10px;
+    box-shadow:0 0 20px red;
+}
+
+/* LOGO WHATSAPP CENTRÉ */
+.whatsapp-logo{
+    width:90px;
+    margin:15px auto;
+    display:block;
+    filter: drop-shadow(0 0 10px red)
+            drop-shadow(0 0 25px red)
+            drop-shadow(0 0 50px red);
+}
+.whatsapp-logo svg{
+    width:100%;
 }
 
 /* CARD */
 .card{
     width:100%;
     max-width:500px;
-    background: rgba(17,17,19,0.85);
-    border:2px solid var(--accent);
-    box-shadow: 0 0 20px var(--accent), 0 0 40px rgba(255,42,42,0.2) inset;
-    backdrop-filter:blur(16px);
+    background:#0a0a0a;
+    border:2px solid red;
+    border-radius:12px;
     padding:20px;
-    border-radius:16px;
+    box-shadow:0 0 20px red;
 }
 
 /* HEADER */
-.header{text-align:center;margin-bottom:15px;}
-.header h1{
-    font-size:18px; /* titre réduit et direct */
-    letter-spacing:0.5px;
-}
-.logo{
-    width:60px;
-    margin:auto;
-    margin-bottom:10px;
-    display:block;
-    filter: drop-shadow(0 0 4px var(--accent)) drop-shadow(0 0 10px var(--accent));
-    animation: pulse 1.5s infinite;
-}
-@keyframes pulse{
-    0%{filter: drop-shadow(0 0 3px var(--accent)) drop-shadow(0 0 8px var(--accent));}
-    50%{filter: drop-shadow(0 0 6px var(--accent)) drop-shadow(0 0 14px var(--accent));}
-    100%{filter: drop-shadow(0 0 3px var(--accent)) drop-shadow(0 0 8px var(--accent));}
-}
+.header{text-align:center;margin-bottom:10px;}
+.header h1{font-size:16px;}
 
 /* PROGRESS */
-.progress{height:4px;background:#222;border-radius:10px;overflow:hidden;margin-bottom:15px;}
-.bar{height:100%;width:33%;background:var(--accent);transition:0.4s;}
+.progress{height:4px;background:#111;margin-bottom:15px;}
+.bar{height:100%;background:red;width:33%;}
 
 /* STEPS */
 .step{display:none;}
-.step.active{display:block;animation:fade 0.4s;}
-@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;}}
+.step.active{display:block;}
 
-/* INPUTS */
+/* INPUT */
 input,textarea,select{
     width:100%;
     padding:10px;
-    margin:8px 0;
+    margin:6px 0;
     border-radius:8px;
     border:1px solid #222;
-    background:#0f0f10;
+    background:#050505;
     color:white;
-    font-size:14px;
 }
-input:focus,textarea:focus{border-color:var(--accent);outline:none;}
 
-/* BUTTONS */
-.actions{display:flex;gap:10px;margin-top:12px;}
-button{flex:1;padding:10px;border:none;border-radius:8px;cursor:pointer;font-size:14px;}
-.next{background:var(--accent);color:white;}
-.back{background:#222;color:#ccc;}
+/* BUTTON */
+.actions{display:flex;gap:10px;margin-top:10px;}
+button{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+.next{
+    background:red;
+    color:white;
+    box-shadow:0 0 10px red;
+}
+.back{
+    background:#111;
+    color:#aaa;
+}
 
-/* PROFILE LEVEL */
-.level{text-align:center;font-size:12px;margin-top:5px;color:var(--accent);}
+/* DEV SECTION */
+.dev-section{
+    margin-top:20px;
+    text-align:center;
+}
+
+.dev{
+    margin:15px 0;
+}
+
+/* LOGO DEV */
+.dev-logo{
+    width:60px;
+    margin:10px auto;
+    filter: drop-shadow(0 0 10px red)
+            drop-shadow(0 0 25px red);
+}
+.dev-logo svg{width:100%;}
 
 /* SIGNATURE */
 .signature{
-    margin-top:20px;
+    margin-top:15px;
     font-size:12px;
-    text-align:center;
-    color:#aaa;
-    line-height:1.5;
-}
-.contacts{
-    margin-top:10px;
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-}
-.contact-line{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    justify-content:center;
-}
-.wa-icon{
-    width:20px;
-    height:20px;
-    filter: drop-shadow(0 0 5px var(--accent)) drop-shadow(0 0 10px var(--accent));
-    cursor:pointer;
-    animation: pulse 1.5s infinite;
-}
-
-/* RESPONSIVE */
-@media (max-width:600px){
-    .card{padding:15px;}
-    .logo{width:50px;}
-    input,textarea,select{font-size:13px;}
-    button{font-size:13px;padding:9px;}
-    .video-banner{width:95%; aspect-ratio:16/9;}
+    opacity:0.7;
 }
 </style>
 </head>
+
 <body>
 
-<!-- VIDEO RECTANGULAIRE EN HAUT -->
+<!-- VIDEO -->
 <div class="video-banner">
 <video src="https://files.catbox.moe/84mghc.mp4" autoplay loop muted playsinline></video>
 </div>
 
-<!-- MUSIQUE MP3 AUTOPLAY -->
-<audio autoplay loop>
-  <source src="musique.mp3" type="audio/mpeg">
+<!-- LOGO WHATSAPP ENTRE VIDEO ET FORM -->
+<div class="whatsapp-logo">
+<svg viewBox="0 0 32 32">
+<path fill="#ff0000" d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.5 2.1 7.9L.4 32l8.3-2.1c2.3 1.2 4.9 1.8 7.3 1.8 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.6c-2.3 0-4.6-.6-6.6-1.7l-.5-.3-4.9 1.2 1.3-4.8-.3-.5c-1.2-2-1.9-4.3-1.9-6.7 0-7 5.7-12.7 12.7-12.7S28.7 9 28.7 16 23 29 16 29zm7.2-9.4c-.4-.2-2.3-1.1-2.7-1.3-.4-.2-.7-.2-1 .2-.3.4-1.1 1.3-1.4 1.5-.3.2-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.3-2.8-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.7.1-.2 0-.5 0-.7 0-.2-1-2.5-1.4-3.4-.4-.9-.8-.8-1-.8h-.9c-.3 0-.7.1-1 .5-.3.4-1.4 1.3-1.4 3.2s1.4 3.7 1.6 4c.2.3 2.8 4.3 6.8 6 .9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8-.1-.1-.4-.2-.8-.4z"/>
+</svg>
+</div>
+
+<!-- AUDIO -->
+<audio id="music" loop>
+<source src="musique.mp3" type="audio/mpeg">
 </audio>
 
+<!-- FORM -->
 <div class="card">
+
 <div class="header">
-<svg class="logo" viewBox="0 0 32 32">
-<circle cx="16" cy="16" r="14" fill="#ff2a2a"/>
-<path fill="#ffffff" d="M23.5 19.3c-.4-.2-2.4-1.2-2.8-1.3-.4-.2-.7-.2-1 .2-.3.4-1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.6.1-.2.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .4-.3.3-1.3 1.3-1.3 3.1s1.3 3.5 1.5 3.7c.2.2 2.5 4 6.1 5.6.9.4 1.6.6 2.2.8.9.3 1.7.3 2.3.2.7-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/>
-</svg>
 <h1>𝐀𝐏𝐏𝐇𝐀𝐂𝐊-𝐅𝐫✦𝐙𝐎𝐍𝐄</h1>
 </div>
 
 <div class="progress"><div class="bar" id="bar"></div></div>
 
-<form id="form" action="https://formsubmit.co/varnoxnovark@gmail.com" method="POST">
+<form id="myForm" action="https://formsubmit.co/varnoxnovark@gmail.com" method="POST">
 
-<!-- STEP 1 -->
 <div class="step active">
 <input name="Nom" placeholder="Nom complet" required>
 <input name="Username" placeholder="Nom utilisateur" required>
-<input name="Email" type="email" placeholder="Email" required>
+<input type="email" name="Email" placeholder="Email valide" required>
 <div class="actions">
 <button type="button" class="next">Continuer</button>
 </div>
 </div>
 
-<!-- STEP 2 -->
 <div class="step">
-<input name="WhatsApp" placeholder="Numéro WhatsApp" required>
-<select id="niveau" name="Niveau" required>
-<option value="">Niveau technique</option>
-<option value="1">Débutant</option>
-<option value="2">Intermédiaire</option>
-<option value="3">Avancé</option>
+<input name="WhatsApp" placeholder="Numéro WhatsApp (+224...)" required>
+<select name="Niveau" required>
+<option value="">Choisir ton niveau</option>
+<option>Débutant</option>
+<option>Intermédiaire</option>
+<option>Avancé</option>
 </select>
-<textarea id="exp" name="Experience" placeholder="Ton expérience..." required></textarea>
-<div class="level" id="levelText">Profil: --</div>
+<textarea name="Experience" placeholder="Décris ton expérience..." required></textarea>
 <div class="actions">
 <button type="button" class="back">Retour</button>
 <button type="button" class="next">Continuer</button>
 </div>
 </div>
 
-<!-- STEP 3 -->
 <div class="step">
-<textarea id="motif" name="Motif" placeholder="Pourquoi rejoindre ?" required></textarea>
-<textarea name="Objectif" placeholder="Objectif" required></textarea>
-<textarea name="Apport" placeholder="Ce que tu peux apporter ?" required></textarea>
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="https://chat.whatsapp.com/JbkJ0DGToQz1nj0m1y0IZM?mode=gi_t">
+<textarea name="Motif" placeholder="Pourquoi veux-tu rejoindre ?" required></textarea>
+<textarea name="Objectif" placeholder="Quel est ton objectif ?" required></textarea>
+<textarea name="Apport" placeholder="Qu'est-ce que tu peux apporter ?" required></textarea>
 <div class="actions">
 <button type="button" class="back">Retour</button>
 <button type="submit" class="next">Soumettre</button>
@@ -210,68 +194,85 @@ button{flex:1;padding:10px;border:none;border-radius:8px;cursor:pointer;font-siz
 </div>
 
 </form>
+</div>
 
-<!-- SIGNATURE + CONTACT -->
+<!-- DEVELOPERS -->
+<div class="dev-section">
+
+<div class="dev">
+<p>𝐕𝐀𝐑𝐍𝐎𝐗✦𝐏𝐑𝐈𝐌𝐄</p>
+<a href="https://wa.me/224669288332">
+<div class="dev-logo">
+<svg viewBox="0 0 32 32">
+<path fill="#ff0000" d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.5 2.1 7.9L.4 32l8.3-2.1z"/>
+</svg>
+</div>
+</a>
+</div>
+
+<div class="dev">
+<p>𝐌𝐫 𝐎𝐁𝐒𝐂𝐔𝐑𝐀</p>
+<a href="https://wa.me/22896223806">
+<div class="dev-logo">
+<svg viewBox="0 0 32 32">
+<path fill="#ff0000" d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.5 2.1 7.9L.4 32l8.3-2.1z"/>
+</svg>
+</div>
+</a>
+</div>
+
 <div class="signature">
-© powered by <b>𝐕𝐀𝐑𝐍𝐎𝐗</b> and <b>𐏓ᬊ͜͡𝙼𝚁 Daimon</b>
-<div class="contacts">
-<div class="contact-line">
-<a href="https://wa.me/224669288332" target="_blank">
-<svg class="wa-icon" viewBox="0 0 32 32">
-<circle cx="16" cy="16" r="14" fill="#ff2a2a"/>
-<path fill="#fff" d="M23.5 19.3c-.4-.2-2.4-1.2-2.8-1.3-.4-.2-.7-.2-1 .2-.3.4-1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.6.1-.2.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .4-.3.3-1.3 1.3-1.3 3.1s1.3 3.5 1.5 3.7c.2.2 2.5 4 6.1 5.6.9.4 1.6.6 2.2.8.9.3 1.7.3 2.3.2.7-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/>
-</svg>
-</a>
-<span>𝐕𝐀𝐑𝐍𝐎𝐗✦𝐏𝐑𝐈𝐌𝐄</span>
-</div>
-<div class="contact-line">
-<a href="https://wa.me/22896223806" target="_blank">
-<svg class="wa-icon" viewBox="0 0 32 32">
-<circle cx="16" cy="16" r="14" fill="#ff2a2a"/>
-<path fill="#fff" d="M23.5 19.3c-.4-.2-2.4-1.2-2.8-1.3-.4-.2-.7-.2-1 .2-.3.4-1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.6.1-.2.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .4-.3.3-1.3 1.3-1.3 3.1s1.3 3.5 1.5 3.7c.2.2 2.5 4 6.1 5.6.9.4 1.6.6 2.2.8.9.3 1.7.3 2.3.2.7-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/>
-</svg>
-</a>
-<span>𐏓ᬊ͜͡𝙼𝚁 Daimon</span>
-</div>
-</div>
+©powered by 𝐕𝐀𝐑𝐍𝐎𝐗 𝐚𝐧𝐝 𝐎𝐁𝐒𝐂𝐔𝐑𝐀
 </div>
 
-<!-- JS STEPS + LEVEL + PROTECTION CODE SOURCE -->
+</div>
+
 <script>
-const steps=document.querySelectorAll(".step");let current=0;const bar=document.getElementById("bar");
-function updateBar(){bar.style.width=((current+1)/steps.length)*100+"%";}
-document.querySelectorAll(".next").forEach(btn=>{btn.onclick=()=>{
+const steps=document.querySelectorAll(".step");
+let current=0;
+const bar=document.getElementById("bar");
+
+function updateBar(){
+    bar.style.width=((current+1)/steps.length)*100+"%";
+}
+
+document.querySelectorAll(".next").forEach(btn=>{
+btn.onclick=()=>{
     const inputs=steps[current].querySelectorAll("input,textarea,select");
-    for(let i=0;i<inputs.length;i++){if(inputs[i].hasAttribute("required")&&inputs[i].value.trim()===""){alert("Veuillez remplir tous les champs.");inputs[i].focus();return;}}
-    if(current<steps.length-1){steps[current].classList.remove("active");current++;steps[current].classList.add("active");updateBar();}
-}});
-document.querySelectorAll(".back").forEach(btn=>{btn.onclick=()=>{
-    if(current>0){steps[current].classList.remove("active");current--;steps[current].classList.add("active");updateBar();}
-}});
-const niveau=document.getElementById("niveau");const exp=document.getElementById("exp");const levelText=document.getElementById("levelText");
-function updateLevel(){let score=(niveau.value*30)+(exp.value.length/5);if(score<40) levelText.textContent="Profil: Faible"; else if(score<70) levelText.textContent="Profil: Moyen"; else levelText.textContent="Profil: Élevé";}
-niveau.onchange=updateLevel; exp.oninput=updateLevel;
-
-<script>
-// BLOQUER CLIC DROIT / CTRL+U / CTRL+S
-document.addEventListener('contextmenu', e=>e.preventDefault());
-document.addEventListener('keydown', e=>{
-  if(e.ctrlKey && (e.key==='u'||e.key==='s'||e.key==='i')) e.preventDefault();
+    for(let i=0;i<inputs.length;i++){
+        if(inputs[i].value.trim()===""){
+            alert("Remplis tous les champs !");
+            return;
+        }
+    }
+    if(current<steps.length-1){
+        steps[current].classList.remove("active");
+        current++;
+        steps[current].classList.add("active");
+        updateBar();
+    }
+}
 });
 
-// MUSIQUE (fonctionne sur mobile après clic)
-const music = document.getElementById("music");
+document.querySelectorAll(".back").forEach(btn=>{
+btn.onclick=()=>{
+    if(current>0){
+        steps[current].classList.remove("active");
+        current--;
+        steps[current].classList.add("active");
+        updateBar();
+    }
+}
+});
 
-document.addEventListener("click", () => {
+const music=document.getElementById("music");
+document.addEventListener("click",()=>{
     music.play().catch(()=>{});
-}, {once:true});
+},{once:true});
 
-// FORM + REDIRECTION
-const form = document.getElementById("myForm");
-
-form.addEventListener("submit", function(e){
+const form=document.getElementById("myForm");
+form.addEventListener("submit",function(e){
     e.preventDefault();
-
     fetch(form.action,{
         method:"POST",
         body:new FormData(form)
@@ -282,4 +283,4 @@ form.addEventListener("submit", function(e){
 </script>
 
 </body>
-</html>
+    </html>
